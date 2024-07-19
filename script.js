@@ -38,4 +38,4 @@ app.post('/prompt', async (req, res) => {
     res.json({ response: response.text() });
 });
 
-app.listen(port, () => console.log("Started at 3000"));
+app.listen(process.env.PORT||port, () => console.log("Started at 3000"));
