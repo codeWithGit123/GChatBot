@@ -2,6 +2,7 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');//requiring the 
 const express = require('express');//Requiring Express For Routing
 const path = require('path')
 require('dotenv').config()
+const fs = require('fs')
 
 const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 //Using The Gemini API KEY, Provided From The AI.GOOGLE.DEV Platform
