@@ -9,7 +9,7 @@ const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 
 
 const app = express();//Initializing An Express APP
-const port = 3000;//Defining a Port
+const port = process.env.PORT||3000;//Defining a Port
 
 app.use(express.json());//For Converting The Data into JSON Format
 app.use(express.urlencoded({ extended: true }));//for form submissions
@@ -42,4 +42,4 @@ app.post('/prompt', async (req, res) => {
     res.json({ response: response.text() });
 });
 
-app.listen(process.env.PORT||port, () => console.log("Started at 3000"));
+app.listen(port, () => console.log(`Started at ${port}`));
