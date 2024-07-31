@@ -17,9 +17,7 @@ app.use(express.static(path.join(__dirname,'/public')))
 app.set('view engine', 'ejs');//setting View Engine For Easy Access
 
 app.get('/', (req, res) => { //Start Route Takes To The Chat-Bot LanderPage
-    fs.appendFile('log.txt',`A Get Request ${Date.now()}\n`,(err)=>{
-        if(err) throw err;
-    })
+    console.log(`User Requested at ${Date()}`);
     res.render('index');
 })
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
